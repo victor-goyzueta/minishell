@@ -3,53 +3,53 @@ CYAN	=	\033[0;36m
 WHITE	=	\033[0m
 CLEAR	=	\r\033[K
 
-NAME = minishell
+NAME	=	minishell
 
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-CFLAGS += -I /opt/homebrew/opt/readline/include
-CFLAGS += -I libft
-CFLAGS += -I inc
+CC		=	cc
+CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	+=	-I /opt/homebrew/opt/readline/include
+CFLAGS	+=	-I libft
+CFLAGS	+=	-I inc
 
-LDFLAGS = -L/opt/homebrew/opt/readline/lib -lreadline
+LDFLAGS	=	-L/opt/homebrew/opt/readline/lib -lreadline
 
-LIBFT = libft/libft.a
+LIBFT	=	libft/libft.a
 
-SRCS = 	src/main.c						\
-		src/init_data.c					\
-		src/init_environment.c			\
-		src/wait_signal.c				\
-		src/modes.c						\
-		src/set_prompt.c				\
-		src/set_input.c					\
-		src/split_input.c				\
-		src/split_cmd.c					\
-		src/new_token.c					\
-		src/expand_content.c			\
-		src/execution.c					\
-		src/execution_utils1.c			\
-		src/execution_utils2.c			\
-		src/child_process_utils.c		\
-		src/execute_command_utils.c		\
-		src/heredoc_proccess.c			\
-		src/builtins.c					\
-		src/ft_echo.c					\
-		src/ft_pwd.c					\
-		src/ft_cd.c						\
-		src/ft_env.c					\
-		src/ft_export.c					\
-		src/ft_unset.c					\
-		src/ft_exit.c					\
-		src/vars_utils1.c				\
-		src/vars_utils2.c				\
-		src/bools_utils1.c				\
-		src/bools_utils2.c				\
-		src/write_utils1.c				\
-		src/write_utils2.c				\
-		src/status_utils.c				\
-		src/free_utils1.c				\
-		src/free_utils2.c				\
+SRCS	= 	src/main.c									\
+			src/main_utils/init_data.c					\
+			src/main_utils/init_environment.c			\
+			src/main_utils/modes.c						\
+			src/main_utils/wait_signal.c				\
+			src/set_prompt/set_prompt.c					\
+			src/set_input/set_input.c					\
+			src/set_input/split_input.c					\
+			src/set_input/split_cmd.c					\
+			src/set_input/new_token.c					\
+			src/set_input/expand_content.c				\
+			src/execution_utils/execution.c				\
+			src/execution_utils/execution_utils1.c		\
+			src/execution_utils/execution_utils2.c		\
+			src/execution_utils/child_process_utils.c	\
+			src/execution_utils/execute_command_utils.c	\
+			src/execution_utils/heredoc_proccess.c		\
+			src/built-ins/builtins.c					\
+			src/built-ins/ft_echo.c						\
+			src/built-ins/ft_pwd.c						\
+			src/built-ins/ft_cd.c						\
+			src/built-ins/ft_env.c						\
+			src/built-ins/ft_export.c					\
+			src/built-ins/ft_unset.c					\
+			src/built-ins/ft_exit.c						\
+			src/vars_utils/vars_utils1.c				\
+			src/vars_utils/vars_utils2.c				\
+			src/bool_utils/bools_utils1.c				\
+			src/bool_utils/bools_utils2.c				\
+			src/write_utils/write_utils1.c				\
+			src/write_utils/write_utils2.c				\
+			src/free_utils/status_utils.c				\
+			src/free_utils/free_utils1.c				\
+			src/free_utils/free_utils2.c				\
 
 
 OBJS = $(SRCS:%.c=objs/%.o)
@@ -67,6 +67,7 @@ objs:
 	@mkdir -p objs/src/
 
 objs/%.o: %.c
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
