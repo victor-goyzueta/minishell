@@ -91,6 +91,6 @@ Este proyecto forma parte del Common Core de 42 Madrid y permite profundizar en 
 
 ## 🙌 Agradecimientos
 
-Quiero agradecer a mi compañero **[jocalder](https://github.com/jocalder)** por su colaboración, apoyo y trabajo conjunto en el desarrollo de este proyecto.  
+Quiero agradecer enormemente a mi compañero **[jocalder](https://github.com/jocalder)** por su colaboración, apoyo y trabajo conjunto en el desarrollo de este proyecto.
 El trabajo en equipo y el aprendizaje mutuo han sido clave para completar `minishell`.
 
